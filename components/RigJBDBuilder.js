@@ -16,6 +16,18 @@ export default function RigJBDBuilder() {
   const [zones, setZones] = useState({ green: [], red: [], black: [] });
   const [arrows, setArrows] = useState([]);
   const [arrowId, setArrowId] = useState(0);
+  const [taskStep, setTaskStep] = useState('');
+  const [taskPersons, setTaskPersons] = useState([]);
+  const [tasks, setTasks] = useState([]);
+
+  const addTask = () => {
+    if (taskStep && taskPersons.length > 0) {
+      setTasks([...tasks, { step: taskStep, persons: [...taskPersons] }]);
+      setTaskStep('');
+      setTaskPersons([]);
+    }
+  };
+
   const [zoneId, setZoneId] = useState(0);
 
   const addWorker = () => {
