@@ -69,8 +69,7 @@ export default function RigJBDBuilder() {
     const res = await fetch('/api/generate-jbd', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ operation, rig, pic, lofHazard, workers, tasks })
-    });
+      body: JSON.stringify({ operation, rig, pic, lofHazard, workers, tasks ))});
     const blob = await res.blob();
     const url = URL.createObjectURL(blob);
     setPdfUrl(url);
@@ -122,8 +121,8 @@ export default function RigJBDBuilder() {
         ))}
         {['green', 'red', 'black'].flatMap(color => zones[color].map(z => (
           <Rnd key={`${color}-${z.id}`} size={{ width: z.w, height: z.h }} position={{ x: z.x, y: z.y }}
-            onDragStop={(e, d) => updateZone(color, z.id, { ...z, x: d.x, y: d.y })}
-            onResizeStop={(e, dir, ref, delta, pos) => updateZone(color, z.id, { width: parseInt(ref.style.width), height: parseInt(ref.style.height), ...pos })}
+            onDragStop={(e, d) => updateZone(color, z.id, { ...z, x: d.x, y: d.y ))}
+            onResizeStop={(e, dir, ref, delta, pos) => updateZone(color, z.id, { width: parseInt(ref.style.width), height: parseInt(ref.style.height), ...pos ))}
             style={{
               border: `2px dashed ${color}`,
               backgroundColor: color === 'black' ? 'rgba(0,0,0,0.1)' : color === 'red' ? 'rgba(255,0,0,0.1)' : 'rgba(0,255,0,0.1)',
@@ -133,9 +132,9 @@ export default function RigJBDBuilder() {
           <Rnd key={`a-${a.id}`}
             size={{ width: a.w, height: a.h }}
             position={{ x: a.x, y: a.y }}
-            onDragStop={(e, d) => updateArrow(a.id, { x: d.x, y: d.y })}
+            onDragStop={(e, d) => updateArrow(a.id, { x: d.x, y: d.y ))}
             onResizeStop={(e, dir, ref, delta, pos) =>
-              updateArrow(a.id, { w: parseInt(ref.style.width), h: parseInt(ref.style.height), ...pos })}
+              updateArrow(a.id, { w: parseInt(ref.style.width), h: parseInt(ref.style.height), ...pos ))}
             style={{ position: 'absolute', overflow: 'visible' }}
           >
             <div
@@ -157,7 +156,8 @@ export default function RigJBDBuilder() {
               ↻
             </div>
           </Rnd>
-                })
+        ))}
+        ))}
       </div>
       <div className="flex space-x-2 items-end mt-2">
         <div className="flex flex-col w-full">
@@ -175,7 +175,7 @@ export default function RigJBDBuilder() {
       <div className="space-y-1 mt-2">
         {tasks.map((t, i) => (
           <div key={i} className="border p-2 rounded">
-            {i + 1}. {t.step} (Persons: {t.persons.join(', ')})
+            {i + 1}. {t.step} (Persons: {t.persons.join(', ')))
           </div>
         ))}
       </div>
