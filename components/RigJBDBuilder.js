@@ -69,7 +69,7 @@ export default function RigJBDBuilder() {
     const res = await fetch('/api/generate-jbd', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ operation, rig, pic, lofHazard, workers, tasks ))});
+      body: JSON.stringify({ operation, rig, pic, lofHazard, workers, tasks )});
     const blob = await res.blob();
     const url = URL.createObjectURL(blob);
     setPdfUrl(url);
