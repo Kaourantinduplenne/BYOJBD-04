@@ -122,8 +122,8 @@ export default function RigJBDBuilder() {
         ))}
         {['green', 'red', 'black'].flatMap(color => zones[color].map(z => (
           <Rnd key={`${color}-${z.id}`} size={{ width: z.w, height: z.h }} position={{ x: z.x, y: z.y }}
-            onDragStop={(e, d) => updateZone(color, z.id, { ...z, x: d.x, y: d.y ))}
-            onResizeStop={(e, dir, ref, delta, pos) => updateZone(color, z.id, { width: parseInt(ref.style.width), height: parseInt(ref.style.height), ...pos ))}
+            onDragStop={(e, d) => updateZone(color, z.id, { ...z, x: d.x, y: d.y })}
+            onResizeStop={(e, dir, ref, delta, pos) => updateZone(color, z.id, { width: parseInt(ref.style.width), height: parseInt(ref.style.height), ...pos })}
             style={{
               border: `2px dashed ${color}`,
               backgroundColor: color === 'black' ? 'rgba(0,0,0,0.1)' : color === 'red' ? 'rgba(255,0,0,0.1)' : 'rgba(0,255,0,0.1)',
@@ -133,9 +133,9 @@ export default function RigJBDBuilder() {
           <Rnd key={`a-${a.id}`}
             size={{ width: a.w, height: a.h }}
             position={{ x: a.x, y: a.y }}
-            onDragStop={(e, d) => updateArrow(a.id, { x: d.x, y: d.y ))}
+            onDragStop={(e, d) => updateArrow(a.id, { x: d.x, y: d.y })}
             onResizeStop={(e, dir, ref, delta, pos) =>
-              updateArrow(a.id, { w: parseInt(ref.style.width), h: parseInt(ref.style.height), ...pos ))}
+              updateArrow(a.id, { w: parseInt(ref.style.width), h: parseInt(ref.style.height), ...pos })}
             style={{ position: 'absolute', overflow: 'visible' }}
           >
             <div
