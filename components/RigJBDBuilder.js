@@ -129,9 +129,7 @@ export default function RigJBDBuilder() {
               backgroundColor: color === 'black' ? 'rgba(0,0,0,0.1)' : color === 'red' ? 'rgba(255,0,0,0.1)' : 'rgba(0,255,0,0.1)',
               position: 'absolute'
             }} />
-        )))}
-        {arrows.map(a => (
-          {arrows.map(a => (
+        )))}{arrows.map(a => (
           <Rnd key={`a-${a.id}`}
             size={{ width: a.w, height: a.h }}
             position={{ x: a.x, y: a.y }}
