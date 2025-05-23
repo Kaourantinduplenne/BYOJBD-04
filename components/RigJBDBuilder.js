@@ -157,7 +157,7 @@ export default function RigJBDBuilder() {
               ↻
             </div>
           </Rnd>
-        ))
+        ))}
       </div>
       <div className="flex space-x-2 items-end mt-2">
         <div className="flex flex-col w-full">
