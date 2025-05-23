@@ -157,8 +157,7 @@ export default function RigJBDBuilder() {
               ↻
             </div>
           </Rnd>
-        ))}
-        ))}
+        ))
       </div>
       <div className="flex space-x-2 items-end mt-2">
         <div className="flex flex-col w-full">
@@ -176,7 +175,7 @@ export default function RigJBDBuilder() {
       <div className="space-y-1 mt-2">
         {tasks.map((t, i) => (
           <div key={i} className="border p-2 rounded">
-            {i + 1}. {t.step} (Persons: {t.persons.join(', ')))
+            {i + 1}. {t.step} (Persons: {t.persons.join(', ')}
           </div>
         ))}
       </div>
